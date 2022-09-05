@@ -1,0 +1,176 @@
+/* Resetear valores de configuración */
+* {
+margin: 0;
+padding: 0;
+}
+a {
+    text-decoration: none;
+}
+ul,
+ol {
+    list-style: none;
+}
+
+/* Definir Fuentes */
+@font-face {
+    font-family: 'Work Sans';
+    src: url(./fonts/WorkSans-Regular.ttf) format("truetype");
+    font-style: normal;
+    font-weight: normal;
+}
+@font-face {
+    font-family: 'Work Sans Medium';
+    src: url(./fonts/WorkSans-Medium.ttf) format("truetype");
+    font-style: medium;
+    font-weight: 500;
+}
+@font-face {
+    font-family: 'Work Sans Bold';
+    src: url(./fonts/WorkSans-Bold.ttf) format("truetype");
+    font-style: bold;
+    font-weight: 700;
+}
+
+/* Encabezado */
+.main_header {
+    background-color: #ffffe6;
+    height: 250px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    width: 100%;
+    position: fixed;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center; 
+}
+.main_header_logo {
+    width: 100vw;
+    height: 200px;
+    background: url(./imagenes/CucinaAnushEncabezado.png) ;
+    /* background-attachment: fixed; */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size:contain;
+    display: flex;
+    flex-direction: column;
+}
+.main_header_nav {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.main_header_nav_ul {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    height: 20px;
+    align-items:center;
+}
+.main_header ul li {
+    width: 30%;
+    height: 40px;
+    align-content: center;
+    /* position: relative; */
+}
+.main_header_nav_boton {
+    font-style: Medium;
+    font-size: 1.5rem;
+    font-family: "Work Sans Bold", Verdana, sans-serif;
+    font-weight: 500;
+    line-height: 1.2;
+    color:#ff8000;
+    padding-left: 50px;
+}
+.main_header_nav_boton:hover{
+    color: grey;
+}
+.nav_color_ubicacion {
+    font-style: Medium;
+    font-size: 1.5rem;
+    font-family: "Work Sans Bold", Verdana, sans-serif;
+    font-weight: 500;
+    line-height: 1.2;
+    padding-left: 50px;
+    color: #cc3300;
+}
+/* Cuerpo Principal */
+.main_principal {
+    width: auto;
+    background-color: #ffffe6;
+    font-family: 'Work Sans';
+    display: flex;
+    justify-content: center;
+}
+.main_principal_container {
+    display: flex;
+    align-items: center;
+    height: 100vh;
+    width: 90%;
+    justify-content: space-around;
+}
+.main_principal_wapper{
+    overflow: hidden;
+    display: flex;
+    /* justify-content: space-around; */
+    flex-direction: column;
+    width: 500px;
+}
+.main_principal_wapper_titulo{
+    font-family: 'Work Sans Medium';
+    text-align:center;
+    color:#ff8000;
+}
+.main_principal_container_img{
+    display: flex;
+    width: 400px;
+    justify-content: center;
+}
+.main_principal_nosotros{
+    width: auto;
+    background-color: #ffffe6;
+    font-family: 'Work Sans';
+    display: flex;
+    justify-content: center;
+}
+.main_principal_container_img_nosotros{
+    display: flex;
+    width: 100%;
+    justify-content:space-around;
+}
+
+/* Footer */
+.main_footer{
+    background-color: #ffffe6;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    height: 100px;
+}
+.main_footer_copyright {
+    width: 25px;
+    height: auto;
+}
+.main_footer_persona{
+    display: flex;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 2vh;
+    font-weight: bold;
+    color: #ff8000;
+}
+/* Botón */
+.boton_prueba {
+    width: 100px;
+    height: 60px;
+    padding: 7px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    background-color:#ff8000;
+    color: #ffffe6;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 2vh;
+    font-weight: bold;
+}
