@@ -63,7 +63,7 @@ function verProductos(listado) {
 function altaProducto() {
     producto = prompt(`Alta de Productos \n Ingrese su nombre (Para finalizar * ): `);
     while (producto !="*") {
-        estaProducto = buscoProducto(producto,listaproductos);
+        let estaProducto = buscoProducto(producto,listaproductos);
         if (estaProducto === undefined) {
             alert("Producto nuevo");
             let prec = parseFloat(prompt("Ingrese el precio: $"));
@@ -75,6 +75,23 @@ function altaProducto() {
             alert("Ese producto ya se encuentra en nuestros listados");
         }
         producto = prompt(`Alta de Productos \n Ingrese su nombre (Para finalizar * ): `);
+    }
+}
+
+function modificoProducto(){
+    alert("~ Modificación de un Producto ~\n"+verProductos(listaproductos));
+    let producto = prompt("Modificación de un Producto\n Ingrese el nombre del Producto a modificar: ");
+    let estaProducto= buscoProducto(producto,listaproductos);
+    if (estaProducto === undefined) {
+        alert("Ese producto no existe");
+    } else {
+        ubicacion = listaproductos.indexOf(estaProducto);
+        let prec = parseFloat(prompt("Ingrese el nuevo precio: $"));
+        let st = parseInt(prompt("Ingrese el nuevo Stock: "));
+        let vto = prompt ("Ingrese la nueva Fecha de Vencimiento:");
+        listaproductos[ubicacion].precio=prec;
+        listaproductos[ubicacion].stock=st;
+        listaproductos[ubicacion].vencimiento=vto;
     }
 }
 
@@ -93,7 +110,7 @@ function verProductosCant (listado){
 }
 
 function iniciarProductos(){
-    let opcion = parseInt(prompt("Menú de Productos \n 1- Alta de Producto \n 2- Baja de Producto \n 3- Listado de Productos General \n 4- Listado de Productos cuyo stock sea menor que .... unidades \n 0- Salir"));
+    let opcion = parseInt(prompt("Menú de Productos \n 1- Alta de Producto \n 2- Baja de Producto \n 3- Modificación de un Producto \n 4- Listado de Productos General \n 5- Listado de Productos cuyo stock sea menor que .... unidades \n 0- Salir"));
     while (opcion != 0) {
         switch (opcion) {
             case 1:
@@ -103,14 +120,17 @@ function iniciarProductos(){
                 bajaProducto();
                 break;
             case 3:
-                alert(verProductos(listaproductos));
+                modificoProducto();
                 break;
             case 4:
+                alert(verProductos(listaproductos));
+                break;
+            case 5:
                 verProductosCant(listaproductos);
                 break;
             default:
                 break;
         } 
-        opcion = parseInt(prompt("Menú de Productos \n 1- Alta de Producto \n 2- Baja de Producto \n 3- Listado de Productos General \n 4- Listado de Productos cuyo stock sea menor que .... unidades \n 0- Salir"));
+        opcion = parseInt(prompt("Menú de Productos \n 1- Alta de Producto \n 2- Baja de Producto \n 3- Modificación de un Producto \n 4- Listado de Productos General \n 5- Listado de Productos cuyo stock sea menor que .... unidades \n 0- Salir"));
     }
 }

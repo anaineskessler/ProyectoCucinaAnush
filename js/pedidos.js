@@ -70,11 +70,11 @@ function borrarelemento(elemento,lista){
 }
 
 function calculototal() {
-    totalpedido=0;
-
+/*     totalpedido=0;
     for (let index = 0; index < pedidoproducto.length; index++) {
         totalpedido = totalpedido + pedidoproducto[index].costo;
-    }
+    } */
+    totalpedido=pedidoproducto.reduce((acumulaPrecio,sumoPrec)=>acumulaPrecio+sumoPrec.costo,0);
     return totalpedido;
 }
 
